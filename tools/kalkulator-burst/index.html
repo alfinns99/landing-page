@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="id" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Burst Limit Generator by GesitNet - Generate script MikroTik untuk PPPoE, Hotspot, dan Simple Queue dengan burst limit.">
+    <meta name="author" content="Gesit Network">
+
+    <title>Kalkulator Burst Limit - Gesit Network</title>
+
+    <link rel="shortcut icon" href="../../assets/img/logo-gesit.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+
+    <!-- Landing Page Style -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Kalkulator Burst Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GST Burst">
+    <link rel="apple-touch-icon" href="../../assets/img/logo-gesit.png">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker Burst registered'))
+                    .catch(err => console.log('Service Worker Burst registration failed', err));
+            });
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Raleway, sans-serif !important;
+            background: #f6f8fd !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: initial !important;
+            padding: 0 !important;
+            min-height: 100% !important;
+        }
+        .kalkulator-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 40px 16px;
+        }
+        .dropdown-menu {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,.08);
+            padding: 8px 0;
+        }
+        .dropdown-item {
+            font-size: 14px;
+            font-weight: 500;
+            color: #212529;
+            transition: all 0.3s;
+        }
+        .dropdown-item:hover {
+            background-color: #f0f4ff;
+            color: #0d6efd;
+        }
+        .dropdown-item i {
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body id="home" class="d-flex flex-column h-100">
+    <!-- Navbar (same as landing page) -->
+    <nav class="navbar navbar-expand-lg navbar-light py-4 bg-nav">
+        <div class="container">
+            <a class="navbar-brand" href="../../">
+                <img src="../../assets/img/logo-gesit.png" alt="Gesit Network" width="42" height="42" class="d-inline-block mt--2 me-2">
+                <span class="text-body fs-4 fw-bolder">Gesit Network</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse py-3 py-lg-1" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../../index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../../index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../../index.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3">
+                            <li><a class="dropdown-item py-2 px-3" href="../kalkulator-rasio/index.html"><i class="bi bi-calculator me-2"></i>Kalkulator Rasio</a></li>
+                            <li><a class="dropdown-item py-2 px-3 active" href="./index.html"><i class="bi bi-speedometer2 me-2"></i>Kalkulator Burst Limit</a></li>
+                            <li><a class="dropdown-item py-2 px-3" href="../gpon-onu-script-generator/index.html"><i class="bi bi-hdd-rack me-2"></i>GPON ONU Script</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="https://billing.gesitnet.web.id/customer/login">Billing</a>
+                    </li>
+                </ul>
+                <div class="d-flex mt-3 ms-3 mt-md-0 ms-md-0">
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content: Kalkulator Burst Limit -->
+    <main class="flex-shrink-0">
+        <div class="kalkulator-wrapper">
+            <div class="calc-box">
+                <!-- HEADER -->
+                <div class="logo-header">
+                    <div class="logo-text">Burst Limit Generator</div>
+                    <div class="logo-sub">by GesitNet &mdash; MikroTik Tools</div>
+                </div>
+
+                <div class="calc-content">
+                    <!-- SERVICE TYPE & TARGET IP -->
+                    <div class="form-row-group">
+                        <div class="form-row">
+                            <div class="label-col">
+                                <span class="label-main">Layanan</span>
+                                <span class="label-sub">Tipe</span>
+                            </div>
+                            <div class="input-col">
+                                <select id="serviceType" onchange="toggleTargetIp()">
+                                    <option value="pppoe">PPPoE Profile</option>
+                                    <option value="hotspot">Hotspot User Profile</option>
+                                    <option value="static">IP Statik (Simple Queue)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row" id="targetIpGroup" style="display: none;">
+                            <div class="label-col">
+                                <span class="label-main">Target IP</span>
+                                <span class="label-sub">Host</span>
+                            </div>
+                            <div class="input-col">
+                                <input type="text" id="targetIp" placeholder="192.168.1.1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NAME & PRIORITY -->
+                    <div class="form-row-group">
+                        <div class="form-row">
+                            <div class="label-col">
+                                <span class="label-main">Nama Profil</span>
+                                <span class="label-sub">Paket</span>
+                            </div>
+                            <div class="input-col">
+                                <input type="text" id="profileName" placeholder="Contoh: Paket-Super">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="label-col">
+                                <span class="label-main">Priority</span>
+                                <span class="label-sub">Level</span>
+                            </div>
+                            <div class="input-col">
+                                <select id="priority">
+                                    <option value="8">8 (Lowest)</option>
+                                    <option value="7">7</option>
+                                    <option value="6">6</option>
+                                    <option value="5">5</option>
+                                    <option value="4">4</option>
+                                    <option value="3">3</option>
+                                    <option value="2">2</option>
+                                    <option value="1">1 (Highest)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== UPLOAD & DOWNLOAD SIDE BY SIDE ====== -->
+                    <div class="params-grid">
+                        <!-- UPLOAD COLUMN -->
+                        <div class="param-column">
+                            <div class="section-title upload">
+                                <i class="bi bi-arrow-up-circle me-1"></i> UPLOAD (TX CLIENT)
+                            </div>
+                            <div class="form-row">
+                                <div class="label-col">
+                                    <span class="label-main">Max Limit</span>
+                                    <span class="label-sub">Bandwidth Dasar (M/k)</span>
+                                </div>
+                                <div class="input-col">
+                                    <input type="text" id="upMax" placeholder="Contoh: 2M">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="label-col">
+                                    <span class="label-main">Burst Limit</span>
+                                    <span class="label-sub">Bandwidth Maksimal (M/k)</span>
+                                </div>
+                                <div class="input-col">
+                                    <input type="text" id="upBurst" placeholder="Contoh: 4M">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="label-col">
+                                    <span class="label-main">Burst Threshold</span>
+                                    <span class="label-sub">Pemicu Burst Berhenti (M/k)</span>
+                                </div>
+                                <div class="input-col">
+                                    <input type="text" id="upThresh" placeholder="Contoh: 1500k">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="label-col">
+                                    <span class="label-main">Burst Time</span>
+                                    <span class="label-sub">Durasi Kalkulasi (s)</span>
+                                </div>
+                                <div class="input-col">
+                                    <input type="text" id="upTime" placeholder="Contoh: 16">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DOWNLOAD COLUMN -->
+                        <div class="param-column">
+                            <div class="section-title download">
+                                <i class="bi bi-arrow-down-circle me-1"></i> DOWNLOAD (RX CLIENT)
+                            </div>
+                            <div class="form-row">
+                                <div class="label-col">
+                                    <span class="label-main">Max Limit</span>
+                                    <span class="label-sub">Bandwidth Dasar (M/k)</span>
+                                </div>
+                                <div class="input-col">
+                                    <input type="text" id="downMax" placeholder="Contoh: 10M">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="label-col">
+                                    <span class="label-main">Burst Limit</span>
+                                    <span class="label-sub">Bandwidth Maksimal (M/k)</span>
+                                </div>
+                                <div class="input-col">
+                                    <input type="text" id="downBurst" placeholder="Contoh: 20M">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="label-col">
+                                    <span class="label-main">Burst Threshold</span>
+                                    <span class="label-sub">Pemicu Burst Berhenti (M/k)</span>
+                                </div>
+                                <div class="input-col">
+                                    <input type="text" id="downThresh" placeholder="Contoh: 8M">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="label-col">
+                                    <span class="label-main">Burst Time</span>
+                                    <span class="label-sub">Durasi Kalkulasi (s)</span>
+                                </div>
+                                <div class="input-col">
+                                    <input type="text" id="downTime" placeholder="Contoh: 16">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GENERATE BUTTON -->
+                    <button class="btn-generate" onclick="generateScript()">
+                        <i class="bi bi-terminal me-2"></i>GENERATE SCRIPT
+                    </button>
+
+                    <!-- OUTPUT -->
+                    <div class="output-box terminal-theme">
+                        <div class="output-label">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">MikroTik Terminal Script</span>
+                        </div>
+                        <textarea id="outputScript" rows="3" readonly placeholder="Klik generate untuk menampilkan script..."></textarea>
+                        <div class="btn-copy-wrapper">
+                            <button class="btn-copy" id="btnCopy" onclick="copyScript()">
+                                <i class="bi bi-clipboard"></i> Salin Script
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- INFO NOTE -->
+                    <div class="info-note">
+                        <div class="info-title">Format Bandwidth:</div>
+                        <div class="info-list">
+                            <div><span class="info-dot general"></span> M = Megabit/s</div>
+                            <div><span class="info-dot general"></span> k = Kilobit/s</div>
+                            <div><span class="info-dot general"></span> Limit-At = 1:4 (25% dari Max)</div>
+                            <div><span class="info-dot upload"></span> Upload = TX Client</div>
+                            <div><span class="info-dot download"></span> Download = RX Client</div>
+                        </div>
+                    </div>
+
+                    <div class="calc-copyright">
+                        Aplikasi ini dibuat dengan <span class="love">❤️</span> oleh <span class="author">AlfinNS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same as landing page) -->
+    <footer class="footer mt-auto py-4 bg-white">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center align-items-md-left text-body">
+                <div class="copyright text-center mb-2 mb-md-0">
+                    &copy; <span id="current-year"></span> - <a href="../../" target="_blank" class="fw-bolder">Gesit Network</a>. All rights reserved. | Dibuat sepenuh ❤️ oleh AlfinNS
+                </div>
+                <div class="link ms-md-auto">
+                    <a href="#" target="_blank">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Burst Limit JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>

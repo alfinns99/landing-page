@@ -1,0 +1,265 @@
+<!-- Website Company Profile "Gesit Network" (free)
+******************************************************************
+* Developer   : Indra Styawantoro
+* Company     : Pustaka Koding
+* Release     : Desember 2022
+* Update      : -
+* Website     : pustakakoding.com
+* E-mail      : pustaka.koding@gmail.com
+* WhatsApp    : +62-813-7778-3334
+******************************************************************
+* Modified    : AlfinNS (Gesit Network PWA Integration)
+******************************************************************
+-->
+
+<!doctype html>
+<html lang="id" class="h-100">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Kumpulan Alat Bantu Jaringan dan Fiber Optik oleh Gesit Network">
+    <meta name="author" content="Gesit Network">
+
+    <!-- Title -->
+    <title>Gesit Tools - Peralatan Jaringan Profesional</title>
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="../assets/img/logo-gesit.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .tools-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .tools-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(13, 110, 253, 0.1) !important;
+            border-color: #0d6efd;
+        }
+
+        .tools-card .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: rgba(13, 110, 253, 0.1);
+            color: #0d6efd;
+            font-size: 32px;
+            margin-bottom: 24px;
+            transition: all 0.3s;
+        }
+
+        .tools-card:hover .icon-wrapper {
+            background: #0d6efd;
+            color: #fff;
+        }
+
+        .btn-open-tool {
+            border-radius: 50px;
+            padding: 10px 24px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .hero-tools {
+            padding: 80px 0 60px 0;
+            background: linear-gradient(135deg, #f6f8fd 0%, #edf1f9 100%);
+            border-radius: 0 0 50px 50px;
+        }
+    </style>
+</head>
+
+<body id="home" class="d-flex flex-column h-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light py-4 bg-nav">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="../">
+                <img src="../assets/img/logo-gesit.png" alt="Gesit Network" width="42" height="42"
+                    class="d-inline-block mt--2 me-2">
+                <span class="text-body fs-4 fw-bolder">Gesit Network</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse py-3 py-lg-1" id="navbarSupportedContent">
+                <!-- Menu -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../#contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Tools</a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3">
+                            <li><a class="dropdown-item py-2 px-3" href="kalkulator-rasio/index.html"><i
+                                        class="bi bi-calculator me-2"></i>Kalkulator Rasio</a></li>
+                            <li><a class="dropdown-item py-2 px-3" href="kalkulator-burst/index.html"><i
+                                        class="bi bi-speedometer2 me-2"></i>Kalkulator Burst Limit</a></li>
+                            <li><a class="dropdown-item py-2 px-3" href="gpon-onu-script-generator/index.html"><i
+                                        class="bi bi-hdd-rack me-2"></i>GPON ONU Script</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="https://billing.gesitnet.web.id/">Billing</a>
+                    </li>
+                </ul>
+                <!-- Social Media -->
+                <div class="d-flex mt-3 ms-3 mt-md-0 ms-md-0">
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-shrink-0">
+        <!-- Hero Section -->
+        <section class="mb-5">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="fw-bold mb-3 display-5">Peralatan Jaringan Profesional</h1>
+                        <p class="lead text-muted">Kumpulan alat bantu untuk mempermudah pekerjaan teknis jaringan dan
+                            fiber optik Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Gallery -->
+        <div class="container py-5">
+            <div class="row g-4 justify-content-center">
+                <!-- Tool 1: Kalkulator Rasio -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="card h-100 tools-card border-0 rounded-4 shadow-sm p-4"
+                        onclick="location.href='kalkulator-rasio/index.html'">
+                        <div class="card-body d-flex flex-column">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-calculator"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">GST Kalkulator Rasio</h3>
+                            <p class="text-muted flex-grow-1">Hitung redaman splitter FBT dan PLC pada jaringan FTTH
+                                dengan akurat. Mendukung mode seri (ratio) dan bercabang (ODC).</p>
+                            <div class="mt-4">
+                                <a href="kalkulator-rasio/index.html"
+                                    class="btn btn-primary btn-open-tool w-100 border-0">Buka Alat <i
+                                        class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2: Kalkulator Burst -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="card h-100 tools-card border-0 rounded-4 shadow-sm p-4"
+                        onclick="location.href='kalkulator-burst/index.html'">
+                        <div class="card-body d-flex flex-column">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-speedometer2"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">GST Burst Kalkulator</h3>
+                            <p class="text-muted flex-grow-1">Generator script MikroTik untuk konfigurasi Burst Limit
+                                pada PPPoE, Hotspot, dan Simple Queue. Otomasi perhitungan limit-at 1:4.</p>
+                            <div class="mt-4">
+                                <a href="kalkulator-burst/index.html"
+                                    class="btn btn-outline-primary btn-open-tool w-100">Buka Alat <i
+                                        class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tool 3: GPON ONU Script Generator -->
+                <div class="col-lg-5 col-md-6">
+                    <div class="card h-100 tools-card border-0 rounded-4 shadow-sm p-4"
+                        onclick="location.href='gpon-onu-script-generator/index.html'">
+                        <div class="card-body d-flex flex-column">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-hdd-rack"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">GST GPON ONU Script</h3>
+                            <p class="text-muted flex-grow-1">Generator script registrasi ONU untuk ZTE OLT
+                                C320/C300/C600. Mendukung modem ZTE (PPPoE) dan Non-ZTE (VEIP Bridge).</p>
+                            <div class="mt-4">
+                                <a href="gpon-onu-script-generator/index.html"
+                                    class="btn btn-outline-primary btn-open-tool w-100">Buka Alat <i
+                                        class="bi bi-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-4 bg-white border-top">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center align-items-md-left text-body">
+                <div class="copyright text-center mb-2 mb-md-0">
+                    &copy; <span id="current-year"></span> - <a href="../" class="fw-bolder">Gesit Network</a>. All rights reserved. | Dibuat sepenuh ❤️ oleh AlfinNS
+                </div>
+                <div class="link ms-md-auto text-center text-md-end">
+                    <a href="../" class="me-3">Home</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

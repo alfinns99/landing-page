@@ -76,3 +76,38 @@ body {
 .footer .link a:hover {
   color: #0d6efd;
 }
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  padding: 8px 0;
+  min-width: 200px;
+}
+
+.dropdown-item {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+  transition: all 0.3s;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: #f0f4ff;
+  color: #0d6efd;
+}
+
+.dropdown-item i {
+  color: #0d6efd;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.dropdown-item.active i {
+  color: #fff;
+}

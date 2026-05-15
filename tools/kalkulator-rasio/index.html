@@ -1,0 +1,457 @@
+<!-- Website Company Profile "Gesit Network" (free)
+******************************************************************
+* Developer   : Indra Styawantoro
+* Company     : Pustaka Koding
+* Release     : Desember 2022
+* Update      : -
+* Website     : pustakakoding.com
+* E-mail      : pustaka.koding@gmail.com
+* WhatsApp    : +62-813-7778-3334
+-->
+
+<!doctype html>
+<html lang="id" class="h-100">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Kalkulator Rasio Fiber Optic by GesitNet - Hitung redaman splitter FBT dan PLC pada jaringan FTTH">
+    <meta name="author" content="Gesit Network">
+
+    <!-- Title -->
+    <title>Kalkulator Rasio - Gesit Network</title>
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="../../assets/img/logo-gesit.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+
+    <!-- Landing Page Style -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Kalkulator Rasio Style (scoped) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GST Rasio">
+    <link rel="apple-touch-icon" href="../../assets/img/logo-gesit.png">
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker Rasio registered'))
+                    .catch(err => console.log('Service Worker Rasio registration failed', err));
+            });
+        }
+    </script>
+
+    <!-- Override calculator body styles so it doesn't conflict with landing page -->
+    <style>
+        /* Reset calculator's body override so landing page body style takes precedence */
+        body {
+            font-family: Raleway, sans-serif !important;
+            background: #f6f8fd !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: initial !important;
+            padding: 0 !important;
+            min-height: 100% !important;
+        }
+
+        /* Center the calculator card nicely within the page content */
+        .kalkulator-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 40px 16px;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown-menu {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,.08);
+            padding: 8px 0;
+        }
+        .dropdown-item {
+            font-size: 14px;
+            font-weight: 500;
+            color: #212529;
+            transition: all 0.3s;
+        }
+        .dropdown-item:hover {
+            background-color: #f0f4ff;
+            color: #0d6efd;
+        }
+        .dropdown-item i {
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body id="home" class="d-flex flex-column h-100">
+    <!-- Navbar (same as landing page) -->
+    <nav class="navbar navbar-expand-lg navbar-light py-4 bg-nav">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="../../">
+                <img src="../../assets/img/logo-gesit.png" alt="Gesit Network" width="42" height="42" class="d-inline-block mt--2 me-2">
+                <span class="text-body fs-4 fw-bolder">Gesit Network</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse py-3 py-lg-1" id="navbarSupportedContent">
+                <!-- Menu -->
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../../#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../../#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../../#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="../../#contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link mx-3 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3">
+                            <li><a class="dropdown-item py-2 px-3 active" href="./"><i class="bi bi-calculator me-2"></i>Kalkulator Rasio</a></li>
+                            <li><a class="dropdown-item py-2 px-3" href="../kalkulator-burst/index.html"><i class="bi bi-speedometer2 me-2"></i>Kalkulator Burst Limit</a></li>
+                            <li><a class="dropdown-item py-2 px-3" href="../gpon-onu-script-generator/index.html"><i class="bi bi-hdd-rack me-2"></i>GPON ONU Script</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="https://billing.gesitnet.web.id/customer/login">Billing</a>
+                    </li>
+                </ul>
+                <!-- Social Media -->
+                <div class="d-flex mt-3 ms-3 mt-md-0 ms-md-0">
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media me-3">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="#" target="_blank" class="btn btn-social-media">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content: Kalkulator Rasio -->
+    <main class="flex-shrink-0">
+        <div class="kalkulator-wrapper">
+            <div class="calc-box">
+                <!-- HEADER -->
+                <div class="logo-header">
+                    <div class="logo-text">Kalkulator Rasio</div>
+                    <div class="logo-sub">by GesitNet &mdash; Fiber Optic Solutions</div>
+                </div>
+
+                <div class="calc-content">
+                    <!-- MODE SELECTOR -->
+                    <div class="input-row mode-selector">
+                        <div class="label-col">
+                            <label>Mode Kalkulator</label>
+                            <span>Pilih Tipe Jaringan</span>
+                        </div>
+                        <div class="input-col">
+                            <select id="calcMode" onchange="toggleMode()">
+                                <option value="standar">1. SERI / BERURUTAN (RATIO)</option>
+                                <option value="bercabang">2. PARAREL / BERCABANG (ODC)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- INPUT LASER -->
+                    <div class="input-row">
+                        <div class="label-col">
+                            <label>Input Laser</label>
+                            <span>Power (dB)</span>
+                        </div>
+                        <div class="input-col">
+                            <input type="number" id="inputLaser" placeholder="Contoh: 7" step="0.01">
+                        </div>
+                    </div>
+
+                    <!-- ============ GROUP STANDAR ============ -->
+                    <div id="groupStandar" style="display: block;">
+                        <div class="input-row">
+                            <div class="label-col">
+                                <label>Persen Rasio</label>
+                                <span>Splitter Ratio</span>
+                            </div>
+                            <div class="input-col">
+                                <select id="ratioPersen">
+                                    <option value="0" selected>0:0 (Tanpa Rasio)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div class="label-col">
+                                <label>Jenis ODP</label>
+                                <span>Splitter Passive</span>
+                            </div>
+                            <div class="input-col">
+                                <select id="pasifSplitter">
+                                    <option value="0" selected>0:0 (Tanpa PLC)</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ============ GROUP BERCABANG ============ -->
+                    <div id="groupBercabang" style="display: none;">
+                        <!-- ODC 1 -->
+                        <div class="section-title">ODC 1: Pusat (Main Splitter)</div>
+                        <div class="input-row" style="border-bottom:none; padding-bottom:0;">
+                            <div class="label-col">
+                                <label>Splitter Utama</label>
+                                <span>Awal Jalur</span>
+                            </div>
+                            <div class="input-col">
+                                <select id="t1" class="plc-opt">
+                                    <option value="0">Pilih Splitter...</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- ODC 2 -->
+                        <div class="section-title">ODC 2: (3 Cabang Dari ODC 1)</div>
+                        <div class="form-grid">
+                            <div class="grid-item">
+                                <label>ODC 2.1 (Main)</label>
+                                <select id="t2_1" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label>ODC 2.2</label>
+                                <select id="t2_2" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label>ODC 2.3</label>
+                                <select id="t2_3" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- ODC 3 -->
+                        <div class="section-title">ODC 3: (3 Cabang Dari ODC 2.1)</div>
+                        <div class="form-grid">
+                            <div class="grid-item">
+                                <label>ODC 3.1 (Main)</label>
+                                <select id="t3_1" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label>ODC 3.2</label>
+                                <select id="t3_2" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label>ODC 3.3</label>
+                                <select id="t3_3" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- ODC 4 -->
+                        <div class="section-title">ODC 4: (3 Cabang Dari ODC 3.1)</div>
+                        <div class="form-grid">
+                            <div class="grid-item">
+                                <label>ODC 4.1 (Main)</label>
+                                <select id="t4_1" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label>ODC 4.2</label>
+                                <select id="t4_2" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                            <div class="grid-item">
+                                <label>ODC 4.3</label>
+                                <select id="t4_3" class="plc-opt">
+                                    <option value="0">Tanpa PLC</option>
+                                    <option value="3.5">1:2</option>
+                                    <option value="7.2">1:4</option>
+                                    <option value="10.5">1:8</option>
+                                    <option value="13.8">1:16</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EXTRA LOSS -->
+                    <div class="input-row">
+                        <div class="label-col">
+                            <label>Loses Tambahan</label>
+                            <span>Tambahan (dB)</span>
+                        </div>
+                        <div class="input-col">
+                            <input type="number" id="extraLoss" value="0.15" step="0.01">
+                        </div>
+                    </div>
+
+                    <!-- BUTTON HITUNG -->
+                    <button class="btn-hitung" id="btnHitung" onclick="hitung()">Hitung Redaman</button>
+
+                    <!-- ============ RESULT SECTION ============ -->
+                    <div class="result-section">
+                        <!-- Result Standar -->
+                        <div id="resultStandar" style="display: block;">
+                            <div class="res-row bg-dark">
+                                <div class="res-label text-light">Redaman ODP</div>
+                                <div class="res-value">
+                                    <span id="resODP" class="dbm-val color-bagus">— dBm</span>
+                                    <span id="statusODP" class="status-text color-bagus">Masukkan Input</span>
+                                </div>
+                            </div>
+                            <div class="res-row bg-white" id="rowSisa" style="display: none;">
+                                <div class="res-label" style="color: var(--text-secondary);">Sisa Laser<br><small>(Redaman)</small></div>
+                                <div class="res-value">
+                                    <div class="sisa-wrapper">
+                                        <span class="sisa-box" id="resSisa">0.00</span>
+                                        <button class="btn-tempel" onclick="tempelInput()">Tempel ke Input</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Result Bercabang -->
+                        <div id="resultBercabang" style="display: none; padding: 20px; background: var(--bg-primary);">
+                            <div class="res-label text-light" style="margin-bottom: 15px; font-size: 14px;">DIAGRAM REDAMAN BERCABANG</div>
+                            <div id="multiStageResult"></div>
+                        </div>
+
+                        <!-- Ilustrasi SVG -->
+                        <div id="ilustrasiContainer" style="display: none;">
+                            <div class="res-row bg-dark" style="padding: 10px 15px; border-top: 2px solid var(--accent-red, #e74c3c);">
+                                <div class="res-label text-light" style="font-size: 14px;">ILUSTRASI TOPOLOGI</div>
+                            </div>
+                            <div class="diagram-wrapper" id="svgWrapper">
+                                <div class="zoom-controls">
+                                    <button class="btn-zoom" onclick="zoomSvg(0.2)" title="Zoom In">+</button>
+                                    <button class="btn-zoom" onclick="zoomSvg(-0.2)" title="Zoom Out">−</button>
+                                    <button class="btn-zoom" onclick="resetZoom()" title="Reset Zoom">⟳</button>
+                                </div>
+                                <svg id="svgCanvas"><g id="zoomGroup" transform="translate(0,0) scale(1)"></g></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FOOTER NOTE -->
+                    <div class="footer-note">
+                        <div class="footer-title">Standar Redaman:</div>
+                        <div class="status-list">
+                            <div><span class="status-dot terlalu-bagus"></span> +10 s/d -9: Terlalu Bagus</div>
+                            <div><span class="status-dot bagus"></span> -10 s/d -22: Bagus</div>
+                            <div><span class="status-dot lumayan"></span> -23 s/d -25: Lumayan</div>
+                            <div><span class="status-dot kritis"></span> -26 s/d -28: Kritis</div>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        Aplikasi ini dibuat dengan <span class="love">❤️</span> oleh <span class="author">AlfinNS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same as landing page) -->
+    <footer class="footer mt-auto py-4 bg-white">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center align-items-md-left text-body">
+                <div class="copyright text-center mb-2 mb-md-0">
+                    &copy; <span id="current-year"></span> - <a href="../../" target="_blank" class="fw-bolder">Gesit Network</a>. All rights reserved. | Dibuat sepenuh ❤️ oleh AlfinNS
+                </div>
+                <div class="link ms-md-auto">
+                    <a href="#" target="_blank">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Kalkulator Rasio JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
