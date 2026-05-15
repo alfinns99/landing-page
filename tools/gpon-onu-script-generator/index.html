@@ -16,440 +16,459 @@
 <html lang="id" class="h-100">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="GPON ONU Script Generator by GesitNet - Generate script registrasi ONU untuk ZTE OLT C320/C300/C600 dan lainnya.">
-    <meta name="author" content="Gesit Network">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="GPON ONU Script Generator by GesitNet - Generate script registrasi ONU untuk ZTE OLT C320/C300/C600 dan lainnya.">
+  <meta name="author" content="Gesit Network">
 
-    <title>GPON ONU Script Generator - Gesit Network</title>
+  <title>GPON ONU Script Generator - Gesit Network</title>
 
-    <link rel="shortcut icon" href="../../assets/img/logo-gesit.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../../assets/img/logo-gesit.png" type="image/x-icon">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
 
-    <!-- Landing Page Style -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Landing Page Style -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
 
-    <!-- GPON Script Generator Style -->
-    <link rel="stylesheet" href="style.css">
+  <!-- GPON Script Generator Style -->
+  <link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            font-family: Raleway, sans-serif !important;
-            background: #f6f8fd !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: initial !important;
-            padding: 0 !important;
-            min-height: 100% !important;
-        }
-        .kalkulator-wrapper {
-            display: flex;
-            justify-content: center;
-            padding: 40px 16px;
-        }
-        .dropdown-menu {
-            background: #ffffff;
-            border: 1px solid rgba(0,0,0,.08);
-            padding: 8px 0;
-        }
-        .dropdown-item {
-            font-size: 14px;
-            font-weight: 500;
-            color: #212529;
-            transition: all 0.3s;
-        }
-        .dropdown-item:hover {
-            background-color: #f0f4ff;
-            color: #0d6efd;
-        }
-        .dropdown-item i {
-            color: #0d6efd;
-        }
-    </style>
+  <style>
+    body {
+      font-family: Raleway, sans-serif !important;
+      background: #f6f8fd !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: initial !important;
+      padding: 0 !important;
+      min-height: 100% !important;
+    }
+
+    .kalkulator-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .dropdown-menu {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, .08);
+      padding: 8px 0;
+    }
+
+    .dropdown-item {
+      font-size: 14px;
+      font-weight: 500;
+      color: #212529;
+      transition: all 0.3s;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f0f4ff;
+      color: #0d6efd;
+    }
+
+    .dropdown-item i {
+      color: #0d6efd;
+    }
+  </style>
 </head>
 
 <body id="home" class="d-flex flex-column h-100">
-    <!-- Navbar (same as landing page) -->
-    <nav class="navbar navbar-expand-lg navbar-light py-4 bg-nav">
-        <div class="container">
-            <a class="navbar-brand" href="../../">
-                <img src="../../assets/img/logo-gesit.png" alt="Gesit Network" width="42" height="42" class="d-inline-block mt--2 me-2">
-                <span class="text-body fs-4 fw-bolder">Gesit Network</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+  <!-- Navbar (same as landing page) -->
+  <nav class="navbar navbar-expand-lg navbar-light py-4 bg-nav">
+    <div class="container">
+      <a class="navbar-brand" href="../../">
+        <img src="../../assets/img/logo-gesit.png" alt="Gesit Network" width="42" height="42"
+          class="d-inline-block mt--2 me-2">
+        <span class="text-body fs-4 fw-bolder">Gesit Network</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse py-3 py-lg-1" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link mx-3" href="../../index.html#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3" href="../../index.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3" href="../../index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3" href="../../index.html#contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link mx-3 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Tools</a>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3">
+              <li><a class="dropdown-item py-2 px-3" href="../kalkulator-rasio/index.html"><i
+                    class="bi bi-calculator me-2"></i>Kalkulator Rasio</a></li>
+              <li><a class="dropdown-item py-2 px-3" href="../kalkulator-burst/index.html"><i
+                    class="bi bi-speedometer2 me-2"></i>Kalkulator Burst Limit</a></li>
+              <li><a class="dropdown-item py-2 px-3 active" href="./index.html"><i class="bi bi-hdd-rack me-2"></i>GPON
+                  ONU Script</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3" href="https://billing.gesitnet.web.id/customer/login">Billing</a>
+          </li>
+        </ul>
+        <div class="d-flex mt-3 ms-3 mt-md-0 ms-md-0">
+          <a href="#" target="_blank" class="btn btn-social-media me-3">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" target="_blank" class="btn btn-social-media me-3">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="#" target="_blank" class="btn btn-social-media me-3">
+            <i class="bi bi-youtube"></i>
+          </a>
+          <a href="#" target="_blank" class="btn btn-social-media">
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content: GPON ONU Script Generator -->
+  <main class="flex-shrink-0">
+    <div class="kalkulator-wrapper">
+      <div class="calc-box">
+        <!-- HEADER -->
+        <div class="logo-header">
+          <div class="logo-text">ONU Script Generator</div>
+          <div class="logo-sub">by GesitNet &mdash; GPON Tools</div>
+          <div class="logo-badge">Universal OLT — ZTE C320 / C300 / C600</div>
+        </div>
+
+        <div class="calc-content">
+          <!-- MODE SELECTOR: Single vs Batch -->
+          <div class="mode-tabs">
+            <button class="mode-tab active" id="tab-single" onclick="switchMode('single')">
+              <i class="bi bi-1-circle"></i> Single ONU
             </button>
-            <div class="collapse navbar-collapse py-3 py-lg-1" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link mx-3" href="../../index.html#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-3" href="../../index.html#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-3" href="../../index.html#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-3" href="../../index.html#contact">Contact</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link mx-3 dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tools</a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3">
-                            <li><a class="dropdown-item py-2 px-3" href="../kalkulator-rasio/index.html"><i class="bi bi-calculator me-2"></i>Kalkulator Rasio</a></li>
-                            <li><a class="dropdown-item py-2 px-3" href="../kalkulator-burst/index.html"><i class="bi bi-speedometer2 me-2"></i>Kalkulator Burst Limit</a></li>
-                            <li><a class="dropdown-item py-2 px-3 active" href="./index.html"><i class="bi bi-hdd-rack me-2"></i>GPON ONU Script</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-3" href="https://billing.gesitnet.web.id/customer/login">Billing</a>
-                    </li>
-                </ul>
-                <div class="d-flex mt-3 ms-3 mt-md-0 ms-md-0">
-                    <a href="#" target="_blank" class="btn btn-social-media me-3">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="#" target="_blank" class="btn btn-social-media me-3">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="#" target="_blank" class="btn btn-social-media me-3">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-                    <a href="#" target="_blank" class="btn btn-social-media">
-                        <i class="bi bi-github"></i>
-                    </a>
+            <button class="mode-tab" id="tab-batch" onclick="switchMode('batch')">
+              <i class="bi bi-stack"></i> Batch Generator
+            </button>
+          </div>
+
+          <!-- SECTION: Interface OLT (shared) -->
+          <div class="gpon-section-title"><i class="bi bi-hdd-rack"></i> Interface OLT</div>
+          <div class="form-row-group">
+            <div class="form-row">
+              <div class="label-col">
+                <span class="label-main">Shelf / Slot / Port</span>
+                <span class="label-sub">Interface</span>
+              </div>
+              <div class="input-col">
+                <div class="port-inline">
+                  <input type="number" id="shelf" value="1" min="1" max="8">
+                  <span class="port-sep">/</span>
+                  <input type="number" id="slot" value="1" min="1" max="16">
+                  <span class="port-sep">/</span>
+                  <input type="number" id="port" value="9" min="1" max="16">
                 </div>
+                <span class="iface-preview" id="iface-hint">gpon-olt_1/1/9</span>
+              </div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Main Content: GPON ONU Script Generator -->
-    <main class="flex-shrink-0">
-        <div class="kalkulator-wrapper">
-            <div class="calc-box">
-                <!-- HEADER -->
-                <div class="logo-header">
-                    <div class="logo-text">ONU Script Generator</div>
-                    <div class="logo-sub">by GesitNet &mdash; GPON Tools</div>
-                    <div class="logo-badge">Universal OLT — ZTE C320 / C300 / C600</div>
-                </div>
-
-                <div class="calc-content">
-                    <!-- MODE SELECTOR: Single vs Batch -->
-                    <div class="mode-tabs">
-                        <button class="mode-tab active" id="tab-single" onclick="switchMode('single')">
-                            <i class="bi bi-1-circle"></i> Single ONU
-                        </button>
-                        <button class="mode-tab" id="tab-batch" onclick="switchMode('batch')">
-                            <i class="bi bi-stack"></i> Batch Generator
-                        </button>
-                    </div>
-
-                    <!-- SECTION: Interface OLT (shared) -->
-                    <div class="gpon-section-title"><i class="bi bi-hdd-rack"></i> Interface OLT</div>
-                    <div class="form-row-group">
-                        <div class="form-row">
-                            <div class="label-col">
-                                <span class="label-main">Shelf / Slot / Port</span>
-                                <span class="label-sub">Interface</span>
-                            </div>
-                            <div class="input-col">
-                                <div class="port-inline">
-                                    <input type="number" id="shelf" value="1" min="1" max="8">
-                                    <span class="port-sep">/</span>
-                                    <input type="number" id="slot" value="1" min="1" max="16">
-                                    <span class="port-sep">/</span>
-                                    <input type="number" id="port" value="9" min="1" max="16">
-                                </div>
-                                <span class="iface-preview" id="iface-hint">gpon-olt_1/1/9</span>
-                            </div>
-                        </div>
-                        <div class="form-row" id="single-onu-num">
-                            <div class="label-col">
-                                <span class="label-main">Nomor ONU</span>
-                                <span class="label-sub">Slot (1-128)</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="number" id="onu-num" value="1" min="1" max="128" placeholder="1–128">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- === SINGLE MODE: Per-ONU fields === -->
-                    <div id="single-mode">
-                        <div class="form-row-group">
-                            <div class="form-row">
-                                <div class="label-col">
-                                    <span class="label-main">Serial Number (SN)</span>
-                                    <span class="label-sub">ONU S/N</span>
-                                </div>
-                                <div class="input-col">
-                                    <input type="text" id="sn" placeholder="ZTEGXXXXXXXX" maxlength="16" class="sn-input">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="label-col">
-                                    <span class="label-main">Nama ONU</span>
-                                    <span class="label-sub">Pelanggan</span>
-                                </div>
-                                <div class="input-col">
-                                    <input type="text" id="onu-name" placeholder="Nama pelanggan">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- === BATCH MODE: Dynamic ONU table === -->
-                    <div id="batch-mode" style="display:none;">
-                        <div class="gpon-section-title"><i class="bi bi-list-ol"></i> Daftar ONU
-                            <span class="batch-count" id="batch-count">1 ONU</span>
-                        </div>
-                        <div class="batch-table-wrapper">
-                            <table class="batch-table" id="batch-table">
-                                <thead>
-                                    <tr>
-                                        <th class="th-num">#</th>
-                                        <th class="th-onu">ONU</th>
-                                        <th class="th-sn">Serial Number</th>
-                                        <th class="th-name">Nama Pelanggan</th>
-                                        <th class="th-pppoe" id="th-pppoe-user">PPPoE User</th>
-                                        <th class="th-pppoe" id="th-pppoe-pass">PPPoE Pass</th>
-                                        <th class="th-act"></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="batch-body">
-                                    <!-- rows inserted by JS -->
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="batch-actions">
-                            <button class="btn-add-row" onclick="addBatchRow()">
-                                <i class="bi bi-plus-lg"></i> Tambah ONU
-                            </button>
-                            <button class="btn-add-row btn-add-multi" onclick="addBatchRows()">
-                                <i class="bi bi-plus-circle"></i> Tambah 5 Baris
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- SECTION: Parameter QoS & VLAN (shared) -->
-                    <div class="gpon-section-title"><i class="bi bi-diagram-3"></i> Parameter QoS & VLAN</div>
-                    <div class="form-row-group">
-                        <div class="form-row">
-                            <div class="label-col">
-                                <span class="label-main">T-CONT</span>
-                                <span class="label-sub">Container (1-8)</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="number" id="tcont" value="1" min="1" max="8">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="label-col">
-                                <span class="label-main">Profil Bandwidth</span>
-                                <span class="label-sub">Profile Name</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="text" id="profile" value="server" placeholder="server / 20M / best-effort">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row-group">
-                        <div class="form-row">
-                            <div class="label-col">
-                                <span class="label-main">GEM Port</span>
-                                <span class="label-sub">Encapsulation</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="number" id="gemport" value="1" min="1" max="8">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="label-col">
-                                <span class="label-main">CoS (Priority)</span>
-                                <span class="label-sub">0=Best Effort</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="number" id="cos" value="0" min="0" max="7">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row-group">
-                        <div class="form-row" id="single-svcport">
-                            <div class="label-col">
-                                <span class="label-main">Service Port</span>
-                                <span class="label-sub">SVC Port</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="number" id="svcport" value="1" min="1" max="128">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="label-col">
-                                <span class="label-main">VPort</span>
-                                <span class="label-sub">Virtual Port</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="number" id="vport" value="1" min="1" max="8">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-row-group">
-                        <div class="form-row">
-                            <div class="label-col">
-                                <span class="label-main">User VLAN</span>
-                                <span class="label-sub">Sisi Pelanggan</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="number" id="user-vlan" value="577" min="1" max="4094">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="label-col">
-                                <span class="label-main">Uplink VLAN</span>
-                                <span class="label-sub">Ke Arah BRAS</span>
-                            </div>
-                            <div class="input-col">
-                                <input type="number" id="uplink-vlan" value="577" min="1" max="4094">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECTION: Tipe Modem (shared) -->
-                    <div class="gpon-section-title"><i class="bi bi-router"></i> Tipe Modem</div>
-                    <div class="type-row">
-                        <div class="type-card active" id="type-zte" onclick="setType('zte')">
-                            <div class="type-dot"></div>
-                            <div>
-                                <div class="type-label">ZTE / Vendor ZTE</div>
-                                <div class="type-sub">PPPoE dikelola via OLT</div>
-                            </div>
-                        </div>
-                        <div class="type-card" id="type-nonzte" onclick="setType('nonzte')">
-                            <div class="type-dot"></div>
-                            <div>
-                                <div class="type-label">Non-ZTE / Third Party</div>
-                                <div class="type-sub">VEIP bridge — Huawei, Fiberhome, dll</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECTION: PPPoE Config (ZTE only, single mode) -->
-                    <div id="pppoe-section">
-                        <div class="gpon-section-title"><i class="bi bi-key"></i> Konfigurasi PPPoE</div>
-                        <div class="form-row-group">
-                            <div class="form-row">
-                                <div class="label-col">
-                                    <span class="label-main">Username PPPoE</span>
-                                    <span class="label-sub">Login</span>
-                                </div>
-                                <div class="input-col">
-                                    <input type="text" id="pppoe-user" placeholder="user@isp">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="label-col">
-                                    <span class="label-main">Password PPPoE</span>
-                                    <span class="label-sub">Secret</span>
-                                </div>
-                                <div class="input-col">
-                                    <input type="text" id="pppoe-pass" placeholder="password">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row-group">
-                            <div class="form-row">
-                                <div class="label-col">
-                                    <span class="label-main">VLAN Profile</span>
-                                    <span class="label-sub">Kosong = Otomatis</span>
-                                </div>
-                                <div class="input-col">
-                                    <input type="text" id="vlan-profile" placeholder="VLAN-577">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="label-col">
-                                    <span class="label-main">Host Index</span>
-                                    <span class="label-sub">WAN Host</span>
-                                </div>
-                                <div class="input-col">
-                                    <input type="number" id="host-idx" value="1" min="1" max="8">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- BUTTONS -->
-                    <div class="btn-row">
-                        <button class="btn-generate" id="btn-main-generate" onclick="generate()">
-                            <i class="bi bi-terminal"></i> Generate Script
-                        </button>
-                        <button class="btn-reset" onclick="clearForm()">
-                            <i class="bi bi-arrow-counterclockwise"></i> Reset
-                        </button>
-                    </div>
-
-                    <!-- OUTPUT -->
-                    <div id="output-area" class="output-area">
-                        <div class="output-empty">
-                            <i class="bi bi-terminal"></i>
-                            Isi parameter di atas lalu klik Generate Script
-                        </div>
-                    </div>
-
-                    <!-- INFO NOTE -->
-                    <div class="info-note">
-                        <div class="info-title">Informasi:</div>
-                        <div class="info-list">
-                            <div><span class="info-dot zte"></span> ZTE = PPPoE via OLT</div>
-                            <div><span class="info-dot nonzte"></span> Non-ZTE = VEIP Bridge</div>
-                            <div><span class="info-dot general"></span> Output: Delete + Config Script</div>
-                        </div>
-                    </div>
-
-                    <div class="calc-copyright">
-                        Aplikasi ini dibuat dengan <span class="love">❤️</span> oleh <span class="author">AlfinNS</span>
-                    </div>
-                </div>
+            <div class="form-row" id="single-onu-num">
+              <div class="label-col">
+                <span class="label-main">Nomor ONU</span>
+                <span class="label-sub">Slot (1-128)</span>
+              </div>
+              <div class="input-col">
+                <input type="number" id="onu-num" value="1" min="1" max="128" placeholder="1–128">
+              </div>
             </div>
-        </div>
-    </main>
+          </div>
 
-    <!-- Footer (same as landing page) -->
-    <footer class="footer mt-auto py-4 bg-white">
-        <div class="container">
-            <div class="d-flex flex-column flex-md-row align-items-center align-items-md-left text-body">
-                <div class="copyright text-center mb-2 mb-md-0">
-                    &copy; <span id="current-year"></span> - <a href="../../" target="_blank" class="fw-bolder">Gesit Network</a>. All rights reserved. | Dibuat sepenuh ❤️ oleh AlfinNS
+          <!-- === SINGLE MODE: Per-ONU fields === -->
+          <div id="single-mode">
+            <div class="form-row-group">
+              <div class="form-row">
+                <div class="label-col">
+                  <span class="label-main">Serial Number (SN)</span>
+                  <span class="label-sub">ONU S/N</span>
                 </div>
-                <div class="link ms-md-auto">
-                    <a href="#" target="_blank">Terms & Conditions</a>
+                <div class="input-col">
+                  <input type="text" id="sn" placeholder="ZTEGXXXXXXXX" maxlength="16" class="sn-input">
                 </div>
+              </div>
+              <div class="form-row">
+                <div class="label-col">
+                  <span class="label-main">Nama ONU</span>
+                  <span class="label-sub">Pelanggan</span>
+                </div>
+                <div class="input-col">
+                  <input type="text" id="onu-name" placeholder="Nama pelanggan">
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- === BATCH MODE: Dynamic ONU table === -->
+          <div id="batch-mode" style="display:none;">
+            <div class="gpon-section-title"><i class="bi bi-list-ol"></i> Daftar ONU
+              <span class="batch-count" id="batch-count">1 ONU</span>
+            </div>
+            <div class="batch-table-wrapper">
+              <table class="batch-table" id="batch-table">
+                <thead>
+                  <tr>
+                    <th class="th-num">#</th>
+                    <th class="th-onu">ONU</th>
+                    <th class="th-sn">Serial Number</th>
+                    <th class="th-name">Nama Pelanggan</th>
+                    <th class="th-pppoe" id="th-pppoe-user">PPPoE User</th>
+                    <th class="th-pppoe" id="th-pppoe-pass">PPPoE Pass</th>
+                    <th class="th-act"></th>
+                  </tr>
+                </thead>
+                <tbody id="batch-body">
+                  <!-- rows inserted by JS -->
+                </tbody>
+              </table>
+            </div>
+            <div class="batch-actions">
+              <button class="btn-add-row" onclick="addBatchRow()">
+                <i class="bi bi-plus-lg"></i> Tambah ONU
+              </button>
+              <button class="btn-add-row btn-add-multi" onclick="addBatchRows()">
+                <i class="bi bi-plus-circle"></i> Tambah 5 Baris
+              </button>
+            </div>
+          </div>
+
+          <!-- SECTION: Parameter QoS & VLAN (shared) -->
+          <div class="gpon-section-title"><i class="bi bi-diagram-3"></i> Parameter QoS & VLAN</div>
+          <div class="form-row-group">
+            <div class="form-row">
+              <div class="label-col">
+                <span class="label-main">T-CONT</span>
+                <span class="label-sub">Container (1-8)</span>
+              </div>
+              <div class="input-col">
+                <input type="number" id="tcont" value="1" min="1" max="8">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="label-col">
+                <span class="label-main">Profil Bandwidth</span>
+                <span class="label-sub">Profile Name</span>
+              </div>
+              <div class="input-col">
+                <input type="text" id="profile" value="server" placeholder="server / 20M / best-effort">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row-group">
+            <div class="form-row">
+              <div class="label-col">
+                <span class="label-main">GEM Port</span>
+                <span class="label-sub">Encapsulation</span>
+              </div>
+              <div class="input-col">
+                <input type="number" id="gemport" value="1" min="1" max="8">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="label-col">
+                <span class="label-main">CoS (Priority)</span>
+                <span class="label-sub">0=Best Effort</span>
+              </div>
+              <div class="input-col">
+                <input type="number" id="cos" value="0" min="0" max="7">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row-group">
+            <div class="form-row" id="single-svcport">
+              <div class="label-col">
+                <span class="label-main">Service Port</span>
+                <span class="label-sub">SVC Port</span>
+              </div>
+              <div class="input-col">
+                <input type="number" id="svcport" value="1" min="1" max="128">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="label-col">
+                <span class="label-main">VPort</span>
+                <span class="label-sub">Virtual Port</span>
+              </div>
+              <div class="input-col">
+                <input type="number" id="vport" value="1" min="1" max="8">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row-group">
+            <div class="form-row">
+              <div class="label-col">
+                <span class="label-main">User VLAN</span>
+                <span class="label-sub">Sisi Pelanggan</span>
+              </div>
+              <div class="input-col">
+                <input type="number" id="user-vlan" value="577" min="1" max="4094">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="label-col">
+                <span class="label-main">Uplink VLAN</span>
+                <span class="label-sub">Ke Arah BRAS</span>
+              </div>
+              <div class="input-col">
+                <input type="number" id="uplink-vlan" value="577" min="1" max="4094">
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: Tipe Modem (shared) -->
+          <div class="gpon-section-title"><i class="bi bi-router"></i> Tipe Modem</div>
+          <div class="type-row">
+            <div class="type-card active" id="type-zte" onclick="setType('zte')">
+              <div class="type-dot"></div>
+              <div>
+                <div class="type-label">ZTE / Vendor ZTE</div>
+                <div class="type-sub">PPPoE dikelola via OLT</div>
+              </div>
+            </div>
+            <div class="type-card" id="type-nonzte" onclick="setType('nonzte')">
+              <div class="type-dot"></div>
+              <div>
+                <div class="type-label">Non-ZTE / Third Party</div>
+                <div class="type-sub">VEIP bridge — Huawei, Fiberhome, dll</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: PPPoE Config (ZTE only, single mode) -->
+          <div id="pppoe-section">
+            <div class="gpon-section-title"><i class="bi bi-key"></i> Konfigurasi PPPoE</div>
+            <div class="form-row-group">
+              <div class="form-row">
+                <div class="label-col">
+                  <span class="label-main">Username PPPoE</span>
+                  <span class="label-sub">Login</span>
+                </div>
+                <div class="input-col">
+                  <input type="text" id="pppoe-user" placeholder="user@isp">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="label-col">
+                  <span class="label-main">Password PPPoE</span>
+                  <span class="label-sub">Secret</span>
+                </div>
+                <div class="input-col">
+                  <input type="text" id="pppoe-pass" placeholder="password">
+                </div>
+              </div>
+            </div>
+            <div class="form-row-group">
+              <div class="form-row">
+                <div class="label-col">
+                  <span class="label-main">VLAN Profile</span>
+                  <span class="label-sub">Kosong = Otomatis</span>
+                </div>
+                <div class="input-col">
+                  <input type="text" id="vlan-profile" placeholder="VLAN-577">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="label-col">
+                  <span class="label-main">Host Index</span>
+                  <span class="label-sub">WAN Host</span>
+                </div>
+                <div class="input-col">
+                  <input type="number" id="host-idx" value="1" min="1" max="8">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUTTONS -->
+          <div class="btn-row">
+            <button class="btn-generate" id="btn-main-generate" onclick="generate()">
+              <i class="bi bi-terminal"></i> Generate Script
+            </button>
+            <button class="btn-reset" onclick="clearForm()">
+              <i class="bi bi-arrow-counterclockwise"></i> Reset
+            </button>
+          </div>
+
+          <!-- OUTPUT -->
+          <div id="output-area" class="output-area">
+            <div class="output-empty">
+              <i class="bi bi-terminal"></i>
+              Isi parameter di atas lalu klik Generate Script
+            </div>
+          </div>
+
+          <!-- INFO NOTE -->
+          <div class="info-note">
+            <div class="info-title">Informasi:</div>
+            <div class="info-list">
+              <div><span class="info-dot zte"></span> ZTE = PPPoE via OLT</div>
+              <div><span class="info-dot nonzte"></span> Non-ZTE = VEIP Bridge</div>
+              <div><span class="info-dot general"></span> Output: Delete + Config Script</div>
+            </div>
+          </div>
+
+          <div class="calc-copyright">
+            Aplikasi ini dibuat dengan <span class="love">❤️</span> oleh <span class="author">AlfinNS</span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </main>
 
-    <!-- Popper and Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+  <!-- Footer (same as landing page) -->
+  <footer class="footer mt-auto py-4 bg-white">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-center align-items-md-left text-body">
+        <div class="copyright text-center mb-2 mb-md-0">
+          &copy; <span id="current-year"></span> - <a href="../../" target="_blank" class="fw-bolder">Gesit Network</a>.
+          All rights reserved. | Dibuat sepenuh ❤️ oleh AlfinNS
+        </div>
+        <div class="link ms-md-auto">
+          <a href="#" target="_blank">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+  <!-- Popper and Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
 
-    <!-- GPON Script Generator JS -->
-    <script src="script.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- GPON Script Generator JS -->
+  <script src="script.js"></script>
 </body>
 
 </html>
